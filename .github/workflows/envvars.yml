@@ -9,11 +9,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment: production  
+
     steps:
       - name: Use environment variables
         env:
           API_URL: ${{ vars.API_URL }}
-          APP_MODE: ${{ vars.APP_MODE }}
+          DB_PASS: ${{ secrets.DB_PASSWORD }}
         run: |
-          echo "API URL: $API_URL"
-          echo "App Mode: $APP_MODE"
+          echo "Deploying to $API_URL"
+          echo "DB password length: ${#DB_PASS}"
+          echo "DB password is ${DB_PASS}"
+
+      - name: Write secret to file
+        run: |
+          echo "$DB_PASS" > secret.txt
+        env:
+          DB_PASS: ${{ secrets.DB_PASSWORD }}
+
+      - name: Print file
+        run: cat secret.txt
