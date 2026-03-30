@@ -18,7 +18,6 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITLEAKS_CONFIG: .gitleaks.toml
         continue-on-error: true   # don't fail yet, we handle it in quality gate
 
       - name: Upload Gitleaks SARIF Report

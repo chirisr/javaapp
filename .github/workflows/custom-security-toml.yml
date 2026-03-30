@@ -16,6 +16,8 @@ jobs:
       - name: Run Gitleaks
         id: gitleaks
         uses: gitleaks/gitleaks-action@v2
+        with:
+          args: detect --report-path=results.sarif --report-format=sarif
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG: .gitleaks.toml
