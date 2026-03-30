@@ -1,5 +1,3 @@
-src/test/java/com/example/AppTest.java
-
 package com.example;
 
 import org.junit.jupiter.api.Test;
