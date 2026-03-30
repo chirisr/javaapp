@@ -1,3 +1,5 @@
+src/main/java/com/example/App.java
+
 package com.example;
 
 public class App {
