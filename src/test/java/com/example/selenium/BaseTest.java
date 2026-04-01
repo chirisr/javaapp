@@ -1,5 +1,5 @@
 
-javapackage com.example.selenium;
+package com.example.selenium;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
